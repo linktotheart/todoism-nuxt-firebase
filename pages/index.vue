@@ -1,8 +1,5 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
-      <div class="text-center">
-      <AppBar />
+      <div>
       <h1>
         Hellow world 
       </h1>
@@ -15,8 +12,7 @@
        </v-btn>
       </div>
       
-    </v-col>
-  </v-row>
+
 </template>
 
 <script>
@@ -30,6 +26,8 @@ export default {
     logout() {
 
     }
-  }
+  },
+  layout: 'App',
+
 }
 </script>
