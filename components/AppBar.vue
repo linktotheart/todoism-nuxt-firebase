@@ -5,7 +5,7 @@
 			dark
 			app
 		>
-			<v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+			<v-app-bar-nav-icon @click="mini = !mini"></v-app-bar-nav-icon>
 
 			<v-toolbar-title>Todoism</v-toolbar-title>
 
@@ -49,9 +49,13 @@
 
 		<v-navigation-drawer
 			v-model="drawer"
-			class="deep-purple--800 accent-1"
+			:mini-variant.sync="mini"
+			class="deep-purple  "
 			dark
+
 			app
+			expand-on-hover
+
 		>
 			<v-list>
 				<v-list-item class="px-2">
@@ -74,10 +78,10 @@
 
 			<v-list
 				nav
-				shaped
-				class="mt-8 pl-0"
+				dense
+				class="mt-8 0"
 			>
-				<v-subheader>PROJECTS </v-subheader>
+				<!-- <v-subheader>MENU </v-subheader> -->
 				<v-list-item-group
 					v-model="group"
 					class=""
@@ -90,11 +94,11 @@
 						<v-list-item-title>Home</v-list-item-title>
 					</v-list-item>
 
-					<v-list-item>
+					<v-list-item to="/project/jh">
 						<v-list-item-icon>
 							<v-icon>mdi-account</v-icon>
 						</v-list-item-icon>
-						<v-list-item-title>Account</v-list-item-title>
+						<v-list-item-title>Projects</v-list-item-title>
 					</v-list-item>
 				</v-list-item-group>
 			</v-list>
@@ -107,6 +111,7 @@ export default {
 	data: () => ({
 		drawer: true,
 		group: null,
+		mini: true,
 		menus: [
 			{
 				title: 'Profile',
